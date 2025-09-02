@@ -22,7 +22,7 @@
 - ✅ **Keep Inventory ON** → ga usah takut kehilangan item  
 - ✅ **Custom Rank Request** → bikin rank unik lo sendiri via Discord  
 - ✅ **Anti-cheat & Anti-grief** → server aman dari bocil nakal  
-- ✅ **Event rutin** → build battle, PvP night, treasure hunt, dll  
+<!-- - ✅ **Event rutin** → build battle, PvP night, treasure hunt, dll   -->
 
 ---
 
