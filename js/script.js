@@ -18,3 +18,13 @@
          } catch (e) {}
       });
 })();
+
+// Auto-reload
+const style = document.createElement("link");
+style.rel = "stylesheet";
+style.href = "css/style.css?v=" + new Date().getTime();
+document.head.appendChild(style);
+
+const script = document.createElement("script");
+script.src = "js/script.js?v=" + new Date().getTime();
+document.body.appendChild(script);
