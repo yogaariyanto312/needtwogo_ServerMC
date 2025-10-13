@@ -14,7 +14,199 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-     <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" href="css/style.css"><!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-cmd="page-title">NeedTwoGo — Minecraft Server</title>
+  <meta name="description" content="NeedTwoGo — Server Minecraft RPG, vanilla, mini-games. Join sekarang: mc.n2g.my.id" data-cmd="meta-desc">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+  <div class="brand">
+  <div class="logo">
+    <img src="asset/server-icon2.png" alt="Logo N2G">
+  </div>
+  <div>
+    <h1 data-cmd="server-name">NeedTwoGo</h1>
+    <div class="muted" style="font-size:13px" data-cmd="server-tags">Economy • Survival • PvP</div>
+  </div>
+</div>
+
+
+<nav>
+  <a class="nav-link" href="#about">About</a>
+  <a class="nav-link" href="#features">Features</a>
+  <a class="nav-link" href="#rules">Rules</a>
+  <!-- <a class="nav-link" href="#howto">How to Join</a> -->
+  <a class="nav-link" href="#discord">Discord</a>
+  <a class="vote-btn" id="voteBtn" href="https://minecraft-mp.com/server-s349070" target="_blank" rel="noopener noreferrer">Vote</a>
+
+</nav>
+
+    </header>
+
+    <main>
+      <div class="hero">
+        <div class="hero-card">
+          <h2>Selamat datang di <span style="color:var(--accent)" data-cmd="hero-server-name">NeedTwoGo</span></h2>
+          <p class="muted" data-cmd="hero-desc">Server Minecraft dengan nuansa RPG, event mingguan, dan komunitas ramah. Mulai petualanganmu, bangun basis, dan taklukkan dungeon bersama teman!</p>
+
+          <div class="features-list" aria-hidden="false">
+            <div class="pill">RPG Quests</div>
+            <div class="pill">Economy &amp; Shops</div>
+            <div class="pill">Custom Loot</div>
+            <div class="pill">Events Weekly</div>
+            <div class="pill">Friendly Staff</div>
+          </div>
+
+          <div style="margin-top:18px;display:flex;align-items:center">
+    <button class="btn" id="joinBtn">Join — mc.n2g.my.id</button>
+  <div style="margin-left:auto;text-align:right">
+    <div class="muted" style="font-size:13px">Players online</div>
+    <div id="players" aria-live="polite">—</div>
+  </div>
+</div>
+        </div>
+
+        <aside class="server-card" aria-label="Server info">
+          <div style="font-size:13px;color:var(--muted)">Server Address</div>
+          <div style="margin-top:8px"><span class="server-ip" id="serverIp">mc.n2g.my.id</span></div>
+          <div class="status up" id="statusText" aria-live="polite">Checking status...</div>
+          <div style="margin-top:58px;display:flex;gap:8px;justify-content:center">
+            <!-- <a class="nav-link" href="#discord" rel="noopener noreferrer">Discord</a>
+            <a class="nav-link" href="#rules">Rules</a> -->
+            <!-- <button class="copy-btn" id="copyIp2">Copy</button> -->
+          </div>
+        </aside>
+      </div>
+
+<section id="about">
+  <div class="card">
+    <h3>Tentang Server</h3>
+    <p class="muted">
+      <strong>NeedTwoGo</strong> adalah server <strong>Vanilla Survival</strong> dengan sentuhan modern: 
+      sistem <strong>Economy</strong>, fitur <strong>Claim Lands</strong> untuk melindungi wilayahmu, 
+      dan <strong>Custom Enchant</strong> unik yang bikin progres jadi lebih seru.
+    </p>
+    <p class="muted">
+      Di sini kamu bisa membangun, berdagang, atau jadi petualang bebas. 
+      Semua pemain punya kesempatan yang sama untuk berkembang, tanpa pay-to-win.
+      Gabung dan rasain pengalaman survival yang adil dan komunitas yang solid!
+    </p>
+  </div>
+</section>
+
+
+      <section id="features">
+        <h3 style="margin-bottom:10px">Fitur Utama</h3>
+        <div class="grid">
+          <div class="card"><h4>Quest &amp; Story</h4><p class="muted">Quest terstruktur dengan rewards dan lore yang berkembang.</p></div>
+          <div class="card"><h4>Economy</h4><p class="muted">Sistem ekonomi player-driven, shops, auction house.</p></div>
+          <div class="card"><h4>Custom Items</h4><p class="muted">Loot unik, enchant custom, dan artifacts langka.</p></div>
+        </div>
+      </section>
+
+      <section id="rules">
+        <h3>Rules Singkat</h3>
+        <div class="card">
+          <ol>
+            <li>Jaga sikap — tidak toxic/insult.</li>
+            <li>No griefing terhadap build pemain lain tanpa izin.</li>
+            <li>Tidak menggunakan cheat/mod yang memberi unfair advantage.</li>
+            <li>Ikuti keputusan staff saat event berjalan.</li>
+          </ol>
+          <div class="muted" style="font-size:13px">Sanksi: kick/ban tergantung tingkat pelanggaran.</div>
+        </div>
+      </section>
+
+      <section id="howto">
+        <h3>Cara Join</h3>
+        <div class="card">
+          <ol>
+            <li>Buka Minecraft (versi recommended: Java terbaru).</li>
+            <li>Pilih Multiplayer → Add Server.</li>
+            <li>Isi server address: <strong data-cmd="howto-ip">mc.n2g.my.id</strong> lalu Save/Join.</li>
+            <li>Butuh bantuan? Gabung Discord kami di bagian bawah.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- <section id="staff">
+        <h3>Staff</h3>
+        <div class="grid">
+          <div class="card"><h4>Owner</h4><div class="muted">NamaOwner</div></div>
+          <div class="card"><h4>Admin</h4><div class="muted">NamaAdmin</div></div>
+          <div class="card"><h4>Mod</h4><div class="muted">NamaMod</div></div>
+        </div>
+      </section>
+
+      <section id="gallery">
+        <h3>Gallery</h3>
+        <div class="gallery">
+          <div class="thumb" style="background-image:url('BANNER_IMAGE');background-size:cover;background-position:center">Spawn</div>
+          <div class="thumb" style="background-image:url('BANNER_IMAGE');background-size:cover;background-position:center">Dungeon</div>
+          <div class="thumb" style="background-image:url('BANNER_IMAGE');background-size:cover;background-position:center">Event</div>
+        </div>
+      </section>
+
+      <section id="discord">
+        <div class="card">
+          <h3>Discord &amp; Komunitas</h3>
+          <p class="muted">Gabung ke Discord kami untuk update event, bantuan, dan ngobrol bareng.</p>
+          <div style="margin-top:10px;display:flex;gap:8px">
+            <a class="copy-btn" href="https://discord.com/invite/JMZxVh7Q3q" id="discordLink" rel="noopener noreferrer">Join Discord</a>
+            <a class="copy-btn" href="#" id="copyInvite">Copy Invite</a>
+          </div>
+        </div>
+      </section> -->
+
+    </main>
+
+    <!-- <footer>
+      <div class="muted">© <span id="year"></span> NeedTwoGo — Made with ❤️ for the community</div>
+    </footer>
+  </div> -->
+
+  <!-- footer -->
+<footer class="kt-footer" role="contentinfo" aria-label="Footer">
+  <div class="kt-footer-inner">
+    <!-- LEFT: brand -->
+
+    <div class="kt-foot-col kt-foot-brand">
+      <img class="kt-foot-logo" src="asset/server-icon2.png" alt="NeedTwoGo logo" />
+</div>
+      <div class="kt-foot-brand-text">
+        <div class="kt-site-name">NeedTwoGo</div>
+        <div class="kt-site-sub muted">Vanilla • Economy • Claim Lands • Custom Enchant</div>
+      </div>
+    
+
+    <div class="kt-foot-col kt-foot-contact">
+      <div class="kt-foot-contact-row">
+        <span class="muted small">Server IP</span>
+        <span class="kt-ip mono" id="ktFooterIp">mc.n2g.my.id</span>
+      </div>
+      
+    </div>
+  </div>
+  <div class="kt-footer-bottom">
+    <div class="kt-copyright">© <span id="ktFooterYear"></span> NeedTwoGo. All rights reserved.</div>
+  </div>
+</div>
+</footer>
+
+
+
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+
     <!-- end CSS -->
 
     <!-- Framework CSS -->
