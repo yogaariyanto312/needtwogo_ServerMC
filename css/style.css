@@ -567,10 +567,40 @@ a.vote-btn.btn {
     grid-template-columns: 1fr;
   }
 
-  header {
+  .kt-footer {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+    justify-content: center;
+    gap: 12px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .kt-foot-brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 100px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .kt-foot-contact-row{
+    display: flex;
+    
+    justify-content: center;
+    padding-left: 80px;
+    align-items: center;
+    text-align: center;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    align-items: center;
+    text-align: center;
   }
   .hero h2 {
     font-size: 22px;
