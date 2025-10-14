@@ -32,7 +32,8 @@ body::before { /* Menambahkan elemen semu untuk latar belakang */
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: url('/asset/bg6.png') center center / cover no-repeat; /* Ganti dengan gambar latar belakang Anda */
+  /* background: url('/asset/bg6.png') center center / cover no-repeat; */
+  background-color: #494b50e1;
   z-index: -1; /* Place the background behind the content */
   filter: brightness(50%) blur(1px); /* Adjust brightness and blur as needed */
   opacity: 1; /* Adjust opacity as needed */
@@ -53,7 +54,7 @@ html {
 
 
 .container {
-  max-width: 1100px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
@@ -66,9 +67,10 @@ header {
   border-radius: 12px;
   align-items: center;
   justify-content: space-between;
-  background: rgba(78, 78, 78, 0.479); /* semi-transparan biar nyatu sama bg */
+  background: rgba(43, 42, 42, 0.705); /* semi-transparan biar nyatu sama bg */
   backdrop-filter: blur(8px);         /* efek blur ala glass */
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.555);
   padding: 10px 16px;
   margin-bottom: 20px;
   /* transition: background 0.3s ease, box-shadow 0.3s ease; */
@@ -566,6 +568,13 @@ a.vote-btn.btn {
   .grid, .gallery {
     grid-template-columns: 1fr;
   }
+  .kt-footer-inner {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    justify-items: center;
+
+  }
 
   .kt-footer {
     display: flex;
@@ -587,18 +596,21 @@ a.vote-btn.btn {
   }
 
   .kt-foot-brand {
+    display: none;
+  }
+  /* .kt-foot-brand {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding-left: 110px;
     align-items: center;
     text-align: center;
-  }
+  } */
 
   .kt-foot-contact-row{
     display: flex;
     justify-content: center;
-    padding-left: 80px;
+    /* padding-left: 80px; */
     align-items: center;
     text-align: center;
   }

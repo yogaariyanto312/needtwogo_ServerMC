@@ -70,32 +70,31 @@ document
 // Join button → Copy IP with animation (no extra copy button)
 const joinBtn = document.getElementById("joinBtn");
 if (joinBtn) {
-  joinBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    // langsung copy IP dan animasi sukses
-    copyTextWithAnim(CONFIG.serverIp, joinBtn);
-  });
+   joinBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      // langsung copy IP dan animasi sukses
+      copyTextWithAnim(CONFIG.serverIp, joinBtn);
+   });
 }
 
 // animasi copy sukses di tombol
 function animateCopyButton(buttonEl) {
-  if (!buttonEl) return;
-  buttonEl.classList.add("copied");
-  setTimeout(() => buttonEl.classList.remove("copied"), 1500);
+   if (!buttonEl) return;
+   buttonEl.classList.add("copied");
+   setTimeout(() => buttonEl.classList.remove("copied"), 1500);
 }
 
 // versi lengkap dengan animasi
 function copyTextWithAnim(text, buttonEl) {
-  if (!text) return;
-  navigator.clipboard
-    ?.writeText(text)
-    .then(() => animateCopyButton(buttonEl))
-    .catch(() => {
-      animateCopyButton(buttonEl);
-      prompt("Salin manual:", text);
-    });
+   if (!text) return;
+   navigator.clipboard
+      ?.writeText(text)
+      .then(() => animateCopyButton(buttonEl))
+      .catch(() => {
+         animateCopyButton(buttonEl);
+         prompt("Salin manual:", text);
+      });
 }
-
 
 // ===== Live server status logic =====
 // Strategy:
@@ -217,176 +216,181 @@ copyBtns.forEach((b) => {
 
 // helper: show temporary "copied" animation on the clicked element
 function animateCopyButton(buttonEl, message = "Copied!") {
-  if (!buttonEl) return;
-  // add class
-  buttonEl.classList.add('copied');
+   if (!buttonEl) return;
+   // add class
+   buttonEl.classList.add("copied");
 
-  // update aria-live for screen readers
-  const ariaSpan = document.createElement('span');
-  ariaSpan.className = 'sr-only';
-  ariaSpan.setAttribute('aria-live', 'polite');
-  ariaSpan.style.position = 'absolute';
-  ariaSpan.style.left = '-9999px';
-  ariaSpan.textContent = message;
-  document.body.appendChild(ariaSpan);
+   // update aria-live for screen readers
+   const ariaSpan = document.createElement("span");
+   ariaSpan.className = "sr-only";
+   ariaSpan.setAttribute("aria-live", "polite");
+   ariaSpan.style.position = "absolute";
+   ariaSpan.style.left = "-9999px";
+   ariaSpan.textContent = message;
+   document.body.appendChild(ariaSpan);
 
-  // cleanup after timeout
-  setTimeout(() => {
-    buttonEl.classList.remove('copied');
-    // remove aria element
-    document.body.removeChild(ariaSpan);
-  }, 1600);
+   // cleanup after timeout
+   setTimeout(() => {
+      buttonEl.classList.remove("copied");
+      // remove aria element
+      document.body.removeChild(ariaSpan);
+   }, 1600);
 }
 
 // improved copyText that accepts the button element to animate
 function copyTextWithAnim(text, buttonEl) {
-  if (!text) return;
-  navigator.clipboard?.writeText(text)
-    .then(() => {
-      // try nicer unobtrusive toast via animate
-      animateCopyButton(buttonEl, "Tersalin!");
-    })
-    .catch(() => {
-      // fallback: show prompt and still animate
-      animateCopyButton(buttonEl, "Salin manual");
-      prompt("Salin manual:", text);
-    });
+   if (!text) return;
+   navigator.clipboard
+      ?.writeText(text)
+      .then(() => {
+         // try nicer unobtrusive toast via animate
+         animateCopyButton(buttonEl, "Tersalin!");
+      })
+      .catch(() => {
+         // fallback: show prompt and still animate
+         animateCopyButton(buttonEl, "Salin manual");
+         prompt("Salin manual:", text);
+      });
 }
 
 // wire up all copy buttons
-document.querySelectorAll('.copy-btn').forEach((btn) => {
-  btn.addEventListener('click', (e) => {
-    const id = btn.id || '';
-    if (id === 'copyIp' || id === 'copyIp2') {
-      copyTextWithAnim(CONFIG.serverIp, btn);
-    } else if (id === 'copyInvite') {
-      copyTextWithAnim(CONFIG.discordLink, btn);
-    } else {
-      // generic: copy server ip
-      copyTextWithAnim(CONFIG.serverIp, btn);
-    }
-  });
+document.querySelectorAll(".copy-btn").forEach((btn) => {
+   btn.addEventListener("click", (e) => {
+      const id = btn.id || "";
+      if (id === "copyIp" || id === "copyIp2") {
+         copyTextWithAnim(CONFIG.serverIp, btn);
+      } else if (id === "copyInvite") {
+         copyTextWithAnim(CONFIG.discordLink, btn);
+      } else {
+         // generic: copy server ip
+         copyTextWithAnim(CONFIG.serverIp, btn);
+      }
+   });
 
-  // keyboard support already added earlier, but ensure Enter triggers click
-  btn.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      btn.click();
-    }
-  });
+   // keyboard support already added earlier, but ensure Enter triggers click
+   btn.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+         e.preventDefault();
+         btn.click();
+      }
+   });
 });
 
-// 
+//
 // Smooth scrolling with header offset
 // Paste this near the bottom of js/script.js
 
 (function enableSmoothNavScroll() {
-  const header = document.querySelector('header');
-  const headerHeight = () => (header ? header.getBoundingClientRect().height : 0);
+   const header = document.querySelector("header");
+   const headerHeight = () => (header ? header.getBoundingClientRect().height : 0);
 
-  // helper to perform smooth scroll to element with offset
-  function scrollToEl(targetEl) {
-    if (!targetEl) return;
-    const rect = targetEl.getBoundingClientRect();
-    const absoluteTop = window.pageYOffset + rect.top;
-    const offset = headerHeight() + 12; // 12px extra gap; tweak if needed
-    const scrollTo = Math.max(0, absoluteTop - offset);
+   // helper to perform smooth scroll to element with offset
+   function scrollToEl(targetEl) {
+      if (!targetEl) return;
+      const rect = targetEl.getBoundingClientRect();
+      const absoluteTop = window.pageYOffset + rect.top;
+      const offset = headerHeight() + 12; // 12px extra gap; tweak if needed
+      const scrollTo = Math.max(0, absoluteTop - offset);
 
-    window.scrollTo({
-      top: scrollTo,
-      behavior: 'smooth'
-    });
-  }
+      window.scrollTo({
+         top: scrollTo,
+         behavior: "smooth"
+      });
+   }
 
-  // Intercept all in-page nav links (href starting with #)
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', (ev) => {
-      // ignore if link is external anchor with full url or no hash
-      const href = a.getAttribute('href');
-      if (!href || href === '#' || href.startsWith('http')) return;
+   // Intercept all in-page nav links (href starting with #)
+   document.querySelectorAll('a[href^="#"]').forEach((a) => {
+      a.addEventListener("click", (ev) => {
+         // ignore if link is external anchor with full url or no hash
+         const href = a.getAttribute("href");
+         if (!href || href === "#" || href.startsWith("http")) return;
 
-      // find target element by id
-      const id = href.slice(1);
-      const target = document.getElementById(id);
-      if (target) {
-        ev.preventDefault();
-        scrollToEl(target);
+         // find target element by id
+         const id = href.slice(1);
+         const target = document.getElementById(id);
+         if (target) {
+            ev.preventDefault();
+            scrollToEl(target);
 
-        // update URL hash without jumping
-        history.replaceState(null, '', '#' + id);
-      }
-    });
-  });
+            // update URL hash without jumping
+            history.replaceState(null, "", "#" + id);
+         }
+      });
+   });
 
-  // also ensure any programmatic scroll (like joinTop) uses offset
-  const joinTopBtn = document.getElementById('joinTop');
-  if (joinTopBtn) {
-    joinTopBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const howto = document.getElementById('howto');
-      if (howto) scrollToEl(howto);
-    });
-  }
+   // also ensure any programmatic scroll (like joinTop) uses offset
+   const joinTopBtn = document.getElementById("joinTop");
+   if (joinTopBtn) {
+      joinTopBtn.addEventListener("click", (e) => {
+         e.preventDefault();
+         const howto = document.getElementById("howto");
+         if (howto) scrollToEl(howto);
+      });
+   }
 })();
 
 // Discord card handlers (put near other UI init code)
 (function discordCardHandlers() {
-  const invite = CONFIG && CONFIG.discordLink ? CONFIG.discordLink : "https://discord.com/invite/JMZxVh7Q3q";
-  const joinBtn = document.getElementById("joinDiscordBtn");
-  const copyBtn = document.getElementById("copyInviteBtn");
+   const invite =
+      CONFIG && CONFIG.discordLink
+         ? CONFIG.discordLink
+         : "https://discord.com/invite/JMZxVh7Q3q";
+   const joinBtn = document.getElementById("joinDiscordBtn");
+   const copyBtn = document.getElementById("copyInviteBtn");
 
-  // ensure join button has consistent btn classes
-  if (joinBtn && !joinBtn.classList.contains('primary-btn')) joinBtn.classList.add('primary-btn');
+   // ensure join button has consistent btn classes
+   if (joinBtn && !joinBtn.classList.contains("primary-btn"))
+      joinBtn.classList.add("primary-btn");
 
-  // local copy + anim helper (safe fallback if copyTextWithAnim not defined)
-  function localCopyAnim(text, btn) {
-    if (!btn) return;
-    navigator.clipboard?.writeText(text)
-      .then(() => {
-        btn.classList.add('copied');
-        setTimeout(() => btn.classList.remove('copied'), 1400);
-      })
-      .catch(() => {
-        // fallback prompt and pseudo-anim
-        prompt("Salin manual:", text);
-        btn.classList.add('copied');
-        setTimeout(() => btn.classList.remove('copied'), 1400);
+   // local copy + anim helper (safe fallback if copyTextWithAnim not defined)
+   function localCopyAnim(text, btn) {
+      if (!btn) return;
+      navigator.clipboard
+         ?.writeText(text)
+         .then(() => {
+            btn.classList.add("copied");
+            setTimeout(() => btn.classList.remove("copied"), 1400);
+         })
+         .catch(() => {
+            // fallback prompt and pseudo-anim
+            prompt("Salin manual:", text);
+            btn.classList.add("copied");
+            setTimeout(() => btn.classList.remove("copied"), 1400);
+         });
+   }
+
+   // wire copy button (prefer existing helper if present)
+   if (copyBtn) {
+      copyBtn.addEventListener("click", (e) => {
+         e.preventDefault();
+         if (typeof copyTextWithAnim === "function") {
+            copyTextWithAnim(invite, copyBtn);
+         } else {
+            localCopyAnim(invite, copyBtn);
+         }
       });
-  }
 
-  // wire copy button (prefer existing helper if present)
-  if (copyBtn) {
-    copyBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      if (typeof copyTextWithAnim === 'function') {
-        copyTextWithAnim(invite, copyBtn);
-      } else {
-        localCopyAnim(invite, copyBtn);
-      }
-    });
+      // keyboard accessibility
+      copyBtn.setAttribute("tabindex", 0);
+      copyBtn.addEventListener("keydown", (e) => {
+         if (e.key === "Enter") copyBtn.click();
+      });
+   }
 
-    // keyboard accessibility
-    copyBtn.setAttribute('tabindex', 0);
-    copyBtn.addEventListener('keydown', (e) => { if (e.key === 'Enter') copyBtn.click(); });
-  }
-
-  // join button just opens link (already an <a>), no extra code needed
+   // join button just opens link (already an <a>), no extra code needed
 })();
 // footer simple: auto year + copy IP
 // footer helpers: year auto-fill
-(function ktFooterInit(){
-  const yearEl = document.getElementById('ktFooterYear');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+(function ktFooterInit() {
+   const yearEl = document.getElementById("ktFooterYear");
+   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // set footer IP if you keep dynamic serverIp in CONFIG
-  const ipEl = document.getElementById('ktFooterIp');
-  if (ipEl && typeof CONFIG !== 'undefined' && CONFIG.serverIp) {
-    ipEl.textContent = CONFIG.serverIp;
-  }
+   // set footer IP if you keep dynamic serverIp in CONFIG
+   const ipEl = document.getElementById("ktFooterIp");
+   if (ipEl && typeof CONFIG !== "undefined" && CONFIG.serverIp) {
+      ipEl.textContent = CONFIG.serverIp;
+   }
 })();
-
-
-
 
 /*
 Notes & troubleshooting:
