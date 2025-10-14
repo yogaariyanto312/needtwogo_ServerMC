@@ -576,18 +576,27 @@ a.vote-btn.btn {
     text-align: center;
   }
 
+  .kt-site-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* gap: 12px; */
+    padding-bottom: 4px;
+    align-items: center;
+    text-align: center;
+  }
+
   .kt-foot-brand {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 100px;
+    padding-left: 110px;
     align-items: center;
     text-align: center;
   }
 
   .kt-foot-contact-row{
     display: flex;
-    
     justify-content: center;
     padding-left: 80px;
     align-items: center;
