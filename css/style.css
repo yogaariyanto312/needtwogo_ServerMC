@@ -32,8 +32,8 @@ body::before { /* Menambahkan elemen semu untuk latar belakang */
   left: 0;
   width: 100vw;
   height: 100vh;
-  /* background: url('/asset/bg6.png') center center / cover no-repeat; */
-  background-color: #494b50e1;
+  background: url('/asset/bg6.png') center center / cover no-repeat;
+  /* background-color: #494b50e1; */
   z-index: -1; /* Place the background behind the content */
   filter: brightness(50%) blur(1px); /* Adjust brightness and blur as needed */
   opacity: 1; /* Adjust opacity as needed */
@@ -67,7 +67,7 @@ header {
   border-radius: 12px;
   align-items: center;
   justify-content: space-between;
-  background: rgba(43, 42, 42, 0.705); /* semi-transparan biar nyatu sama bg */
+  background: rgba(255, 255, 255, 0); /* semi-transparan biar nyatu sama bg */
   backdrop-filter: blur(8px);         /* efek blur ala glass */
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.555);
@@ -280,6 +280,7 @@ nav {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  
 }
 
 .pill {
@@ -288,6 +289,9 @@ nav {
   border-radius: 999px;
   font-size: 13px;
   color: #9aa6b2;
+  backdrop-filter: blur(8px);         /* efek blur ala glass */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.192);
+
 }
 
 /* Server card */
@@ -596,16 +600,14 @@ a.vote-btn.btn {
   }
 
   .kt-foot-brand {
-    display: none;
+    /* display: none; */
   }
-  /* .kt-foot-brand {
+  .kt-foot-brand {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    padding-left: 110px;
     align-items: center;
     text-align: center;
-  } */
+  }
 
   .kt-foot-contact-row{
     display: flex;

@@ -203,7 +203,7 @@ function applyStatus(data) {
 
 // Run first update and then refresh every 30s
 updateServerStatus();
-setInterval(updateServerStatus, 10000);
+setInterval(updateServerStatus, 30000);
 
 // Accessibility: allow Enter on copy buttons
 const copyBtns = document.querySelectorAll(".copy-btn");
