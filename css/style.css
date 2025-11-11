@@ -362,6 +362,59 @@ section {
   font-weight: 600;
 }
 
+/* Staff */
+.staff-card {
+  background: #0f172000;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.555);
+  backdrop-filter: blur(8px);         /* efek blur ala glass */
+  transition: all 0.3s ease;
+}
+.staff-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+}
+
+.staff-role {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.staff-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.staff-info img {
+  width: 48px;
+  height: 48px;
+}
+
+.staff-text {
+  display: flex;
+  flex-direction: column; /* Biar nama dan deskripsi vertikal */
+  justify-content: center;
+}
+
+.staff-name {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.staff-desc {
+  color: #ccc;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+
+
 
 .thumb {
   height: 120px;
