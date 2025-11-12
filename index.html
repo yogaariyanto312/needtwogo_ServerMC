@@ -31,7 +31,7 @@
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="asset/server-icon2.png">
 </head>
-<body>
+<body id="home">
 
   <!-- Schema Markup -->
   <script type="application/ld+json">
@@ -67,6 +67,7 @@
 </div>
 
 <nav>
+  <a class="nav-link" href="#home">Home</a>
   <a class="nav-link" href="#about">About</a>
   <a class="nav-link" href="#features">Features</a>
   <a class="nav-link" href="#rules">Rules</a>
@@ -85,7 +86,6 @@
           <p class="muted" data-cmd="hero-desc">Server Minecraft dengan nuansa RPG, event mingguan, dan komunitas ramah. Mulai petualanganmu, bangun basis, dan taklukkan dungeon bersama teman!</p>
 
           <div class="features-list" aria-hidden="false">
-            <div class="pill">RPG Quests</div>
             <div class="pill">Economy &amp; Shops</div>
             <div class="pill">Custom Loot</div>
             <div class="pill">Events Weekly</div>
@@ -100,17 +100,11 @@
   </div>
 </div>
         </div>
-
         <aside class="server-card" aria-label="Server info">
           <div style="font-size:13px;color:var(--muted)">Server Address</div>
           <div style="margin-top:8px"><span class="server-ip" id="serverIp">mc.n2g.my.id</span></div>
-          <div class="status up" style="margin-top: 60px;" id="statusText" aria-live="polite">Checking status...</div>
+          <div class="status up" style="margin-top: 80px;" id="statusText" aria-live="polite">Checking status...</div>
           <div style="margin-top:58px;display:flex;gap:8px;justify-content:center">
-            
-            
-            <!-- <a class="nav-link" href="#discord" rel="noopener noreferrer">Discord</a>
-            <a class="nav-link" href="#rules">Rules</a> -->
-            <!-- <button class="copy-btn" id="copyIp2">Copy</button> -->
           </div>
         </aside>
       </div>

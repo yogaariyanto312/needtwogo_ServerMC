@@ -4,7 +4,7 @@ const CONFIG = {
    serverName: "NeedTwoGo", // CMD: config.serverName
    serverIp: "mc.n2g.my.id", // CMD: config.serverIp
    discordLink: "https://discord.com/invite/JMZxVh7Q3q", // CMD: config.discordLink
-   bannerImage: "BANNER_IMAGE" // CMD: config.bannerImage
+   bannerImage: "./asset/server-icon2.png" // CMD: config.bannerImage
 };
 
 // Init UI values
@@ -112,6 +112,7 @@ async function fetchJson(url) {
 }
 
 async function updateServerStatus() {
+   // UI elements
    const statusEl = document.getElementById("statusText");
    const playersEl = document.getElementById("players");
    // optimistic UI
@@ -157,8 +158,8 @@ function applyStatus(data) {
       if (data.online) {
          if (statusEl)
             statusEl.textContent =
-               "Online — " +
-               ((data.motd && data.motd.clean && data.motd.clean.join(" ")) || "Welcome");
+               "Server Sedang Online" ;
+               // ((data.motd && data.motd.clean && data.motd.clean.join(" ")) || "Welcome");
          statusEl && statusEl.classList.remove("down");
          statusEl && statusEl.classList.add("up");
          const p =
@@ -176,7 +177,7 @@ function applyStatus(data) {
                        ? " / " + data.players.max
                        : " players");
       } else {
-         if (statusEl) statusEl.textContent = "Offline — Maintenance";
+         if (statusEl) statusEl.textContent = "Server Sedang Offline";
          statusEl && statusEl.classList.remove("up");
          statusEl && statusEl.classList.add("down");
          if (playersEl) playersEl.textContent = "0";
@@ -201,9 +202,9 @@ function applyStatus(data) {
    }
 }
 
-// Run first update and then refresh every 30s
+// Jalankan pembaruan pertama lalu segarkan setiap kali 30s
 updateServerStatus();
-setInterval(updateServerStatus, 30000);
+setInterval(updateServerStatus, 10000);
 
 // Accessibility: allow Enter on copy buttons
 const copyBtns = document.querySelectorAll(".copy-btn");
