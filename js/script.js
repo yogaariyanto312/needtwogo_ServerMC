@@ -102,7 +102,7 @@ function copyTextWithAnim(text, buttonEl) {
 // 2) If blocked by CORS or fails, try AllOrigins proxy to fetch that API.
 // 3) If still failing, show offline/unavailable and provide instructions to setup a server-side proxy.
 
-const STATUS_API = `https://api.mcsrvstat.us/2/${encodeURIComponent(CONFIG.serverIp)}`;
+const STATUS_API = `https://api.mcsrvstat.us/3/${encodeURIComponent(CONFIG.serverIp)}`;
 const ALLORIGINS = "https://api.allorigins.win/raw?url=";
 
 async function fetchJson(url) {

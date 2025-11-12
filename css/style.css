@@ -313,19 +313,30 @@ nav {
   display: inline-block;
   backdrop-filter: blur(16px);         /* efek blur ala glass */
 }
+.server-status {
+  font-family: monospace;
+  font-weight: 700;
+  background: rgba(255,255,255,0.03);
+  padding: 8px 10px;
+  border-radius: 10px;
+  display: flex;
+  backdrop-filter: blur(32px);         /* efek blur ala glass */
+  margin-top: 65px;
+  justify-content: center;
+}
 
 .status {
-  margin-top: 10px;
+  /* margin-top: 10px; */
   color: #9aa6b2;
   font-size: 14px;
 }
 
 .status.up {
-  color: #8ef29a;
+  color: #00ff1e;
 }
 
 .status.down {
-  color: #ff8b8b;
+  color: #ff0000;
 }
 
 /* Sections */
