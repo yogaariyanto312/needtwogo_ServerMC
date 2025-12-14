@@ -32,13 +32,14 @@ body::before { /* Menambahkan elemen semu untuk latar belakang */
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: url('/asset/bg6.png') center center / cover no-repeat;
+  background: url('/asset/bg5.jpg') center center / cover no-repeat;
   /* background-color: #494b50e1; */
   z-index: -1; /* Place the background behind the content */
   filter: brightness(50%) blur(1px); /* Adjust brightness and blur as needed */
   opacity: 1; /* Adjust opacity as needed */
   /* animation: floatbg 10s infinite alternate ease-in-out; */
   pointer-events: none; /* Prevent interaction with the background */
+  backdrop-filter: blur(8px);         /* efek blur ala glass */
 }
 
 @keyframes floatbg {
@@ -351,7 +352,6 @@ section {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.555);
     backdrop-filter: blur(8px);         /* efek blur ala glass */
 }
-
 .card h3 {
   margin-top: 0;
 }
